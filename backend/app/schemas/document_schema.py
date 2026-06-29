@@ -38,7 +38,7 @@ class DocumentInfoResponse(BaseModel):
     char_count: int
     chunk_count: int
     status: str
-    uploaded_at: datetime
+    uploaded_at: Optional[datetime] = None
     summary: Optional[str] = None
 class SummaryRequest(BaseModel):
     language: str = "en"

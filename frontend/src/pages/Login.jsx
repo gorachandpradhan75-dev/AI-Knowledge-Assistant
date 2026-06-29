@@ -1,11 +1,19 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import api from "../services/api";
-
 export default function Login() {
   const navigate = useNavigate();
+useEffect(() => {
 
+  const token =
+    localStorage.getItem("access_token");
+
+  if (token) {
+    navigate("/");
+  }
+
+}, [navigate]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -84,7 +92,16 @@ export default function Login() {
             {loading ? "Signing In..." : "Sign In"}
           </button>
         </form>
+<p className="text-center text-slate-400 mt-6">
+  Don't have an account?
 
+  <Link
+    to="/register"
+    className="text-blue-500 ml-2"
+  >
+    Create Account
+  </Link>
+</p>
       </div>
     </div>
   );

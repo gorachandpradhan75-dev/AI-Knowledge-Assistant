@@ -32,3 +32,18 @@ frontend/node_modules/
 # Build
 dist/
 build/
+# Runtime Storage
+backend/storage/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+
+# Virtual Environment
+backend/venv312/
+
+# Node
+frontend/node_modules/
+
+# Environment
+backend/.env

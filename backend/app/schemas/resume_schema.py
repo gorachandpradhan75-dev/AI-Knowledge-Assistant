@@ -1,13 +1,13 @@
-"""
-Resume analysis request/response schemas.
-"""
 from pydantic import BaseModel
 
 
 class ResumeAnalysisResponse(BaseModel):
-    analysis_id: str
     filename: str
-    analysis_result: dict
+    score: int
+    skills: list[str]
+    education: list[str]
+    experience: list[str]
+    suggestions: list[str]
 
 
 class ResumeMatchRequest(BaseModel):
